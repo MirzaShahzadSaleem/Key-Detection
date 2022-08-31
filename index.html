@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+    open console and write keeps of kolachi on web screen not on console<br>
+    you have to write 'geeksofkolachi' 
+<script>
+    const pressed = [];
+    const secretWord= 'geeksofkolachi';
+
+    window.addEventListener('keyup', (e)=> {
+        console.log(e.key);
+        pressed.push(e.key);
+        pressed.splice(-secretWord.length - 1, pressed.length - secretWord.length);
+        if (pressed.join('').includes(secretWord)){
+            console.log('Ding Dong!')
+            cornify_add();
+        }
+         console.log(pressed);
+    });
+</script>
+</body>
+</html>
